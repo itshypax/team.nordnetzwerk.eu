@@ -1,0 +1,346 @@
+// -----------------------------
+// BASE
+// -----------------------------
+
+$text: #e4e3e3;
+$white: #fff;
+$lightgray: #dddddd;
+$black: #000;
+$nn: #187ae9;
+$nn-dark: #1268ca;
+
+:root {
+  --gradient-1: 180, 122, 234;
+  --gradient-2: 27, 71, 121;
+}
+
+* {
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+body {
+  font-family: "Merriweather", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  background-color: #111111;
+  font-size: 1.1rem;
+  color: $text;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Work Sans";
+  font-weight: 700;
+}
+
+// -----------------------------
+// LAYOUTBOUNDARY
+// -----------------------------
+
+.layoutBoundary {
+  position: relative;
+  width: 1320px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+  @media (max-width: 1366px) {
+    width: 100%;
+  }
+  @media (max-width: 768px) {
+    padding: 0 10px;
+  }
+  @media (max-width: 480px) {
+    padding: 0 5px;
+  }
+}
+
+// -----------------------------
+// TITLE CARD
+// -----------------------------
+
+.title-card {
+  border-radius: 0;
+  background: linear-gradient(
+      to bottom right,
+      rgba(var(--gradient-1), 0.8) 0%,
+      rgba(var(--gradient-2), 0.8) 100%
+    ),
+    url("/assets/images/3.png");
+  background-size: 105%;
+  color: var(--white);
+  padding: 40px 30px;
+  margin: 40px 0 0 0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+
+  -webkit-animation: title-card-bg 15s ease infinite;
+  -moz-animation: title-card-bg 15s ease infinite;
+  -o-animation: title-card-bg 15s ease infinite;
+  animation: title-card-bg 15s ease infinite;
+}
+
+.title-card__title {
+  font-size: 2.5rem;
+  line-height: 1.2;
+  margin-top: 0;
+  margin-bottom: -15px;
+  @media (max-width: 768px) {
+    font-size: 2rem;
+  }
+}
+
+.title-card__text {
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+  @media (max-width: 768px) {
+    font-size: 1rem;
+  }
+}
+
+@-webkit-keyframes title-card-bg {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@-moz-keyframes title-card-bg {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@-o-keyframes title-card-bg {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes title-card-bg {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.breadcrumbs {
+  padding: 20px 30px;
+  font-size: 0.8rem;
+}
+
+// -----------------------------
+// CONTENT
+// -----------------------------
+
+.container {
+  border-radius: 8px;
+  background-color: #161616;
+  padding: 10px 30px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.container h2 {
+  font-size: 1.5rem;
+}
+
+.you {
+  background: linear-gradient(
+    to bottom right,
+    rgb(var(--gradient-1)),
+    rgb(var(--gradient-2))
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#grunddaten {
+  width: 100%;
+
+  strong {
+    font-size: 0.8rem;
+  }
+}
+
+.grunddaten__container {
+  color: $lightgray;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: start;
+  }
+}
+
+.section-trenner {
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(
+    to right,
+    rgb(var(--gradient-1)),
+    rgb(var(--gradient-2))
+  );
+  margin: 20px 0;
+}
+
+.checkmark-list ul,
+.get-list ul {
+  list-style-type: none;
+  padding-left: 20px;
+}
+
+.checkmark-list ul li,
+.get-list ul li {
+  margin-bottom: 5px;
+}
+
+.checkmark-list ul li::before {
+  content: "\f336";
+  font-family: "Font Awesome 6 Pro";
+  font-weight: 900;
+  display: inline-block;
+  margin-right: 5px;
+  color: rgb(var(--gradient-1));
+}
+
+.checkmark-list ul li:nth-child(odd)::before,
+.get-list ul li:nth-child(odd)::before {
+  color: rgb(var(--gradient-2));
+}
+
+.get-list ul li::before {
+  content: "\f12e";
+  font-family: "Font Awesome 6 Pro";
+  font-weight: 900;
+  display: inline-block;
+  margin-right: 5px;
+  color: rgb(var(--gradient-1));
+}
+
+// -----------------------------
+// BUTTONS
+// -----------------------------
+
+.button {
+  display: inline-block;
+  padding: 10px 40px;
+  border-radius: 0;
+  background-color: transparent;
+  border: 2px solid rgb(var(--gradient-2));
+  color: rgb(var(--gradient-2));
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 700;
+  transition: all 0.2s ease;
+  margin-bottom: 5px;
+  &:hover {
+    background: rgb(var(--gradient-2));
+    color: $text;
+  }
+}
+
+.button.buttonPrimary {
+  background: rgb(var(--gradient-1));
+  color: $text;
+  border: 2px solid rgb(var(--gradient-1));
+  &:hover {
+    background: transparent;
+    color: rgb(var(--gradient-1));
+  }
+}
+
+// -----------------------------
+// FOOTER
+// -----------------------------
+
+.footer__content {
+  padding: 20px 30px;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.5);
+  text-align: center;
+}
+
+.footer__content__main__links {
+  margin-bottom: 20px;
+
+  a {
+    margin: 0 10px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.5);
+  }
+}
+
+.footer__content__social a {
+  margin: 0 5px;
+  border-radius: 4px;
+  height: 44px;
+  width: 44px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16pt;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  color: $text;
+
+  &.discord {
+    background: #7289da;
+  }
+
+  &.discord:hover {
+    background: #6177c2;
+  }
+
+  &.tiktok {
+    background: #21242b;
+  }
+
+  &.tiktok:hover {
+    background: #171a21;
+  }
+
+  &.instagram {
+    background: #ea0c5f;
+  }
+
+  &.instagram:hover {
+    background: #bb0b4b;
+  }
+
+  &.twitch {
+    background: #9146ff;
+  }
+
+  &.twitch:hover {
+    background: #6441a5;
+  }
+}
